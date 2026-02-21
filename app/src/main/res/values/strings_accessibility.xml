@@ -1,0 +1,3 @@
+<resources>
+    <string name="accessibility_service_description">AppLock requires this service to detect when a locked app is opened. We do not collect or share your personal data.</string>
+</resources>

@@ -2,6 +2,7 @@ package com.applock.biometric.services
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Intent
+import android.os.Build
 import android.view.accessibility.AccessibilityEvent
 import com.applock.biometric.activities.LockActivity
 import com.applock.biometric.data.PreferencesManager
@@ -12,7 +13,18 @@ class AppLockService : AccessibilityService() {
     override fun onServiceConnected() {
         super.onServiceConnected()
         PreferencesManager.init(this)
-        // Optional: Perform any setup here
+
+        // Start foreground service when we have locked apps to keep our process alive.
+        // This improves reliability on devices with aggressive battery optimizers.
+        val lockedApps = PreferencesManager.getLockedApps()
+        if (lockedApps.isNotEmpty()) {
+            val intent = Intent(this, AppGuardForegroundService::class.java)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent)
+            } else {
+                startService(intent)
+            }
+        }
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {

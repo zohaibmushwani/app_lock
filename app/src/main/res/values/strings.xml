@@ -113,4 +113,10 @@
     <string name="security_question_title">Security Question</string>
     <string name="password_recovery">Password Recovery</string>
     <string name="device_admin_description">Activate to prevent this app from being force-stopped or uninstalled.</string>
+
+    <!-- App Guard foreground service -->
+    <string name="app_guard_channel_name">App Lock</string>
+    <string name="app_guard_channel_desc">Keeps app lock protection active in the background.</string>
+    <string name="app_guard_notification_title">App Lock</string>
+    <string name="app_guard_notification_text">Protecting your locked apps</string>
 </resources>

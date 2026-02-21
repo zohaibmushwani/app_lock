@@ -19,7 +19,6 @@ object PermissionUtils {
      * Falls back to Settings.Secure for edge cases.
      */
     fun isAccessibilityServiceEnabled(context: Context): Boolean {
-        // Method 1: Use official AccessibilityManager API - most reliable across all Android versions
         try {
             val am = context.getSystemService(Context.ACCESSIBILITY_SERVICE) as? AccessibilityManager
                 ?: return fallbackAccessibilityCheck(context)

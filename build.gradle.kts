@@ -5,4 +5,6 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
 //    alias(libs.plugins.google.gms.google.services) apply false
     alias(libs.plugins.google.firebase.crashlytics) apply false
+    alias(libs.plugins.skydoves.hotswan) apply false
+    alias(libs.plugins.skydoves.stability.analyzer) apply false
 }

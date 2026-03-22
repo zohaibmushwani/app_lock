@@ -32,6 +32,8 @@ firebaseAnalytics = "23.0.0"
 firebaseConfig = "23.0.1"
 firebaseMessaging = "25.0.1"
 gson = "2.13.2"
+hotswan = "1.0.1"
+stabilityAnalyzer = "0.7.0"
 
 
 [libraries]
@@ -80,4 +82,5 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleFirebaseCrashlytics" }
-
+skydoves-hotswan = { id = "com.github.skydoves.compose.hotswan.compiler", version.ref = "hotswan" }
+skydoves-stability-analyzer = { id = "com.github.skydoves.compose.stability.analyzer", version.ref = "stabilityAnalyzer" }

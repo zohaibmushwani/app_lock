@@ -45,6 +45,7 @@ import com.applock.biometric.helpers.AppInfo
 import com.applock.biometric.helpers.AppUtils
 import com.applock.biometric.navigation.Screen
 import androidx.compose.foundation.Image
+import ir.kaaveh.sdpcompose.ssp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -68,7 +69,7 @@ fun HomeScreen(
             val query = searchQuery.trim().lowercase()
             apps.filter { app ->
                 app.appName.lowercase().contains(query) ||
-                    app.packageName.lowercase().contains(query)
+                        app.packageName.lowercase().contains(query)
             }
         }
     }
@@ -80,7 +81,9 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { TopBarTitle() },
+                title = {
+                    TopBarTitle()
+                },
                 actions = {
                     IconButton(onClick = { navController.navigate(Screen.Settings.route) }) {
                         Icon(
@@ -130,7 +133,7 @@ fun HomeScreen(
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(horizontal = 16.dp)
+                        .padding(horizontal = 20.dp)
                 ) {
                     if (lockedApps.isNotEmpty()) {
                         item(key = "locked_header") {
@@ -250,7 +253,7 @@ fun TopBarTitle() {
             modifier = Modifier.padding(end = 8.dp),
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.primary,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.W900
         )
         Text(
             text = stringResource(R.string.str_lock),

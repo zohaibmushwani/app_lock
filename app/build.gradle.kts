@@ -5,7 +5,8 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 //    alias(libs.plugins.google.gms.google.services)
     alias(libs.plugins.google.firebase.crashlytics)
-
+    alias(libs.plugins.skydoves.hotswan)
+    alias(libs.plugins.skydoves.stability.analyzer)
 }
 
 android {
